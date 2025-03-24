@@ -9,10 +9,10 @@
         <div class="container-fluid my-2">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Users</h1>
+                    <h1>Appointments</h1>
                 </div>
                 <div class="col-sm-6 text-right">
-                    <a href="create-user.html" class="btn btn-primary">New User</a>
+                    <a href="create-user.html" class="btn btn-primary">New </a>
                 </div>
             </div>
         </div>

@@ -30,6 +30,12 @@
                         <p>Doctors</p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="{{ route() }}" class="nav-link">
+                        <i class="nav-icon fas fa-user-md"></i>
+                        <p>Clinic Home</p>
+                    </a>
+                </li>
             </ul>
         </nav>
     </div>
