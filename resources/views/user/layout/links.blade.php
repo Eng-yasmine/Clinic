@@ -18,5 +18,4 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
     <link rel="stylesheet" href="{{ asset('user/assets/styles/pages/main.css') }}">
     @yield('css')
-    <title>@yield('title')</title>
 

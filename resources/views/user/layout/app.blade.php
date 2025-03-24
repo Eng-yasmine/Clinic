@@ -1,4 +1,6 @@
 @include('user.layout.links')
+<title>@yield('title')</title>
+
 </head>
 
 <body>

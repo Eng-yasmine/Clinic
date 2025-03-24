@@ -9,7 +9,7 @@ class DoctorsController extends Controller
 {
     public function index()
     {
-        echo "";
+        
         return view('user.pages.doctors');
     }
 }
