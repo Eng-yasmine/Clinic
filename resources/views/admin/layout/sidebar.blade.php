@@ -31,9 +31,15 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route() }}" class="nav-link">
+                    <a href="{{ route('majors.index') }}" class="nav-link">
                         <i class="nav-icon fas fa-user-md"></i>
-                        <p>Clinic Home</p>
+                        <p>Majors</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('user.index') }}" class="nav-link">
+                        <i class="nav-icon fas fa-user-md"></i>
+                        <p>Back to clinic</p>
                     </a>
                 </li>
             </ul>

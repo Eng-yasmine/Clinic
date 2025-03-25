@@ -11,7 +11,7 @@ use App\Http\Controllers\user\Auth\RegisterController;
 use App\Http\Controllers\admin\pages\PatientsController;
 use App\Http\Controllers\admin\pages\DashboardController;
 use App\Http\Controllers\admin\pages\AppointmentsController;
-
+use App\Http\Controllers\admin\pages\MajorsController as PagesMajorsController;
 
 Route::prefix('/')->group(function () {
     Route::prefix('user')->group(function () {
@@ -33,5 +33,11 @@ Route::prefix('admin')->group(function () {
         Route::get('Appointments', [AppointmentsController::class, 'index'])->name('Admin.Appointments');
         Route::get('doctors', [AdminDoctorsController::class, 'index'])->name('Admin.Doctors');
         Route::get('patients', [PatientsController::class, 'index'])->name('Admin.Patients');
+        Route::prefix('majors')->group(function () {
+            Route::get('index', [PagesMajorsController::class, 'index'])->name('majors.index');
+            Route::get('create', [PagesMajorsController::class, 'create'])->name('major.create');
+            Route::post('store', [PagesMajorsController::class, 'store'])->name('majore.store');
+            Route::delete('destroy/{id}', [PagesMajorsController::class, 'destroy'])->name('majore.destroy');
+        });
     });
 });

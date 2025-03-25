@@ -2,11 +2,15 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Doctor extends Model
 {
-    protected $failable = [];
-
-    
+    /** @use HasFactory<\Database\Factories\DoctorFactory> */
+    use HasFactory;
+    public function major()
+    {
+        return $this->belongsTo(Major::class);
+    }
 }

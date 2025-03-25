@@ -17,14 +17,14 @@ return new class extends Migration
             $table->string('name', 20);
             $table->string('email', 100)->unique();
             $table->string('phone', 50);
+            $table->string('image')->nullable();
             $table->enum('gender', ['male', 'female']);
             $table->string('address', 256);
             $table->string('password', 256);
             $table->date('date_of_birth');
-            $table->string('specialization', 256);
             $table->integer('years_of_experinces')->default(0);
             $table->integer('number_of_licence');
-
+            $table->foreignId('major_id')->constrained()->cascadeOnDelete();
 
             $table->timestamps();
         });
