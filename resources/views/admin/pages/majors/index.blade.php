@@ -26,17 +26,17 @@
                     <div class="card-header">
                         <div class="card-tools">
                             <form action="{{ route('majors.index') }}" method="GET">
-                            <div class="input-group input-group" style="width: 250px;">
-                                <input type="text" name="search" class="form-control float-right"
-                                    placeholder="Search">
+                                <div class="input-group input-group" style="width: 250px;">
+                                    <input type="text" name="search" class="form-control float-right"
+                                        placeholder="Search">
 
-                                <div class="input-group-append">
-                                    <button type="submit" class="btn btn-default">
-                                        <i class="fas fa-search"></i>
-                                    </button>
+                                    <div class="input-group-append">
+                                        <button type="submit" class="btn btn-default">
+                                            <i class="fas fa-search"></i>
+                                        </button>
+                                    </div>
                                 </div>
-                            </div>
-                        </form>
+                            </form>
                         </div>
                     </div>
                     <div class="card-body table-responsive p-0">
@@ -71,15 +71,12 @@
                                             </svg>
                                         </td>
                                         <td>
-                                            <a href="#">
-                                                <svg class="filament-link-icon w-4 h-4 mr-1"
-                                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
-                                                    fill="currentColor" aria-hidden="true">
-                                                    <path
-                                                        d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z">
-                                                    </path>
-                                                </svg>
-                                            </a>
+                                            <form action="{{ route('majors.edit', $major->id) }}" class="d-inline"
+                                                method="">
+
+
+                                                <button type="submit" class="btn btn-warning">edit</button>
+                                            </form>
                                             <form action="{{ route('majore.destroy', $major->id) }}" class="d-inline"
                                                 method="POST">
                                                 @csrf

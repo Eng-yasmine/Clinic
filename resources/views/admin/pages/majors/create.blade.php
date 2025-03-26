@@ -1,5 +1,5 @@
 @extends('admin.layout.app')
-@section('title','create user')
+@section('title','create major')
 
 @section('content')
 <div class="content-wrapper">
@@ -20,8 +20,9 @@
     <!-- Main content -->
     <section class="content">
         <!-- Default box -->
-        <form action="{{ route('majore.store') }}" method="POST">
+        <form action="{{ route('majors.store') }}" method="POST">
             @csrf
+
         <div class="container-fluid">
             @error('title')
             <div class="alert alert-danger">
@@ -38,7 +39,7 @@
             </div>
 
 
-            @endsession
+            @endif
             <div class="row">
                 <div class="col-md-12">
                     <div class="card mb-3">
@@ -47,7 +48,7 @@
                                 <div class="col-md-12">
                                     <div class="mb-3">
                                         <label for="title">Title</label>
-                                        <input type="text" name="title" id="title" class="form-control" placeholder="Title">
+                                        <input type="text" name="title"  id="title" class="form-control" placeholder="Title">
                                     </div>
                                 </div>
 
@@ -61,7 +62,7 @@
             </div>
 
             <div class="pb-5 pt-3">
-                <button class="btn btn-primary">Create</button>
+                <button type="submit" class="btn btn-primary">Create</button>
                 <a href="{{ route('majors.index') }}" class="btn btn-outline-dark ml-3">Cancel</a>
             </div>
         </div>

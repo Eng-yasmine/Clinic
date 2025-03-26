@@ -36,8 +36,10 @@ Route::prefix('admin')->group(function () {
         Route::prefix('majors')->group(function () {
             Route::get('index', [PagesMajorsController::class, 'index'])->name('majors.index');
             Route::get('create', [PagesMajorsController::class, 'create'])->name('major.create');
-            Route::post('store', [PagesMajorsController::class, 'store'])->name('majore.store');
+            Route::post('store', [PagesMajorsController::class, 'store'])->name('majors.store');
             Route::delete('destroy/{id}', [PagesMajorsController::class, 'destroy'])->name('majore.destroy');
+            Route::get('edit/{id}',[PagesMajorsController::class,'edit'])->name('majors.edit');
+            Route::put('update/{id}',[PagesMajorsController::class,'update'])->name('majors.update');
         });
     });
 });
