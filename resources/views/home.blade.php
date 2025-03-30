@@ -1,6 +1,7 @@
+
 @extends('user.layout.app')
 
-@section('title','Doctors')
+@section('title','home')
 
 @section('content')
 <div class="container-fluid bg-blue text-white pt-3">
@@ -26,29 +27,32 @@
 </div>
 <div class="container">
 
-    <h2 class="h1 fw-bold text-center my-4">doctors</h2>
+    <h2 class="h1 fw-bold text-center my-4">Majors</h2>
+
+
     <section class="splide home__slider__doctors mb-5">
         <div class="splide__track ">
             <ul class="splide__list">
                 @foreach ($doctors as $doctor)
-
                 <li class="splide__slide">
                     <div class="card p-2" style="width: 18rem;">
                         <img src="{{asset('user/assets/images/major.jpg')}}" class="card-img-top rounded-circle card-image-circle"
                             alt="major">
                         <div class="card-body d-flex flex-column gap-1 justify-content-center">
-                            <h4 class="card-title fw-bold text-center">{{ $doctor->name }}</h4>
-                            <h6 class="card-title fw-bold text-center">{{ $doctor->major->title }}</h6>
-                            <a href="{{ route('user.create',$doctor->id) }}" class="btn btn-outline-primary card-button">Book an
-                                appointment</a>
+                            <h4 class="card-title fw-bold text-center">{{ $doctor->major->title }}</h4>
+                            <h6 class="card-title fw-bold text-center">{{ $doctor->name }}</h6>
+                            <a href="{{ route('user.doctors') }}" class="btn btn-outline-primary card-button">details
+                        </a>
                         </div>
                     </div>
                 </li>
-
                 @endforeach
+
             </ul>
         </div>
     </section>
+
+
 </div>
 <div class="banner container d-block d-lg-grid d-md-block d-sm-block">
     <div class="info">
@@ -126,7 +130,3 @@
     </div>
 </div>
 @endsection
-
-
-
-

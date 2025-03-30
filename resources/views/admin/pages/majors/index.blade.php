@@ -71,12 +71,8 @@
                                             </svg>
                                         </td>
                                         <td>
-                                            <form action="{{ route('majors.edit', $major->id) }}" class="d-inline"
-                                                method="">
 
-
-                                                <button type="submit" class="btn btn-warning">edit</button>
-                                            </form>
+                                            <a href="{{ route('majors.edit' , $major->id) }}" class="btn btn-warning">edit</a>
                                             <form action="{{ route('majore.destroy', $major->id) }}" class="d-inline"
                                                 method="POST">
                                                 @csrf

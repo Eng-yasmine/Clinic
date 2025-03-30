@@ -7,6 +7,8 @@ use App\Models\Major;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Database\Seeders\MajorSeeder;
+use Database\Seeders\DoctorSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -15,11 +17,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
+       User::factory(100)->create();
 
 
         $this->call([
             MajorSeeder::class,
+            DoctorSeeder::class,
         ]);
     }
 }

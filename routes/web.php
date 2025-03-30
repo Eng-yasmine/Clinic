@@ -13,18 +13,21 @@ use App\Http\Controllers\admin\pages\DashboardController;
 use App\Http\Controllers\admin\pages\AppointmentsController;
 use App\Http\Controllers\admin\pages\MajorsController as PagesMajorsController;
 
-Route::prefix('/')->group(function () {
+Route::get('/',[UserDoctorsController::class,'index'])->name('home');
+
     Route::prefix('user')->group(function () {
         Route::prefix('pages')->group(function () {
-            Route::get('index', [HomeController::class, 'index'])->name('user.index');
             Route::get('majors', [MajorsController::class, 'index'])->name('user.majors');
-            Route::get('doctors', [UserDoctorsController::class, 'index'])->name('user.doctors');
+            Route::get('doctors', [UserDoctorsController::class, 'index2'])->name('user.doctors');
             Route::get('register', [RegisterController::class, 'index'])->name('user.register');
             Route::get('login', [LoginController::class, 'index'])->name('user.login');
             Route::get('contact', [ContactController::class, 'index'])->name('user.contact');
+            Route::get('create/{id}',[UserDoctorsController::class,'create'])->name('user.create');
+            Route::post('store',[UserDoctorsController::class,'store'])->name('user.store');
         });
     });
-});
+
+
 
 
 Route::prefix('admin')->group(function () {
@@ -38,8 +41,8 @@ Route::prefix('admin')->group(function () {
             Route::get('create', [PagesMajorsController::class, 'create'])->name('major.create');
             Route::post('store', [PagesMajorsController::class, 'store'])->name('majors.store');
             Route::delete('destroy/{id}', [PagesMajorsController::class, 'destroy'])->name('majore.destroy');
-            Route::get('edit/{id}',[PagesMajorsController::class,'edit'])->name('majors.edit');
-            Route::put('update/{id}',[PagesMajorsController::class,'update'])->name('majors.update');
+            Route::get('edit/{id}', [PagesMajorsController::class, 'edit'])->name('majors.edit');
+            Route::put('update/{id}', [PagesMajorsController::class, 'update'])->name('majors.update');
         });
     });
 });

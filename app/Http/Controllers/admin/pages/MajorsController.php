@@ -46,9 +46,8 @@ class MajorsController extends Controller
             'title' => 'required|max:255|min:5|string|unique:majors,title'
         ]);
         $major = Major::findOrFail($id);
-        $data = $request->except('_token','_method');
         $major->update([
-            'title'=>$data,
+            'title'=>$request,
         ]);
        // dd($request->all());
         return redirect()->route('majors.index')->with('success','title updated successfully');
