@@ -15,6 +15,7 @@
                 <a type="button" class="btn btn-outline-light navigation--button" href="{{ route('home') }}">Home</a>
                 <a type="button" class="btn btn-outline-light navigation--button" href="{{ route('user.majors') }}">Majors</a>
                 <a type="button" class="btn btn-outline-light navigation--button" href="{{ route('user.doctors') }}">Doctors</a>
+                <a type="button" class="btn btn-outline-light navigation--button" href="{{ route('Admin.DashBoard') }}">DashBoard</a>
 
                 @guest
                     <!-- لو مش مسجل دخول -->

@@ -25,7 +25,8 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="card-tools">
-                            <form action="{{ route('majors.index') }}" method="GET">
+                            <form action="{{ route('majors.search') }}" method="POST">
+                                @csrf
                                 <div class="input-group input-group" style="width: 250px;">
                                     <input type="text" name="search" class="form-control float-right"
                                         placeholder="Search">
@@ -60,7 +61,7 @@
                                     <tr>
 
                                         <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $major->title }}</td>
+                                        <td>{{ $major['title'] }}</td>
 
                                         <td>
                                             <svg class="text-success-500 h-6 w-6 text-success"

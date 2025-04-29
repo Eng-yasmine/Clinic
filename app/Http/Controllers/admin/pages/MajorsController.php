@@ -60,4 +60,16 @@ class MajorsController extends Controller
 
         return redirect()->back()->with('success', 'major deleted successfuuly');
     }
+
+    public function search(Request $request )
+    {
+     $majors = Major::query();
+     $search = $request->input('search');
+     if($search){
+        $majors->where('title','like', '%'.$search.'%')->get();
+     }
+
+     $majors = $majors->paginate(10);
+     return view('admin.pages.majors.index', compact('majors'));
+    }
 }

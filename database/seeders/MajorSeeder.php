@@ -14,7 +14,7 @@ class MajorSeeder extends Seeder
 
     public function run(): void
     {
-    
-       Major::factory(100)->create();
+
+       Major::factory(40)->create();
     }
 }

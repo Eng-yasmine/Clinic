@@ -24,7 +24,7 @@ class DoctorFactory extends Factory
             'password' => Hash::make('password'),
             'address'=>fake()->sentence(),
             'date_of_birth'=>fake()->date(),
-            'years_of_experinces'=>fake()->numberBetween(1, 100),
+            'years_of_experinces'=>fake()->numberBetween(1, 20),
             'number_of_licence'=>fake()->numberBetween(1234, 5678),
             'major_id'=>fake()->numberBetween(1, 100)
 

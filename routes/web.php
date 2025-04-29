@@ -44,6 +44,7 @@ Route::get('/',[UserDoctorsController::class,'index'])->name('home');
                 Route::delete('destroy/{id}', [PagesMajorsController::class, 'destroy'])->name('majore.destroy');
                 Route::get('edit/{id}', [PagesMajorsController::class, 'edit'])->name('majors.edit');
                 Route::put('update/{id}', [PagesMajorsController::class, 'update'])->name('majors.update');
+                Route::post('index',[PagesMajorsController::class,'search'])->name('majors.search');
             });
         });
     });
