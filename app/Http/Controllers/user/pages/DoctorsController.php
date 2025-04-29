@@ -32,10 +32,10 @@ class DoctorsController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:50|min:20',
-            'email'=>'required|email|unique:user,email',
-            'phone'=>'required|regex:/^\+?\d{10,15}$/',
-            'doctor_id'=>'required|exists:doctors,id',
-            'major_id'=>'required|exists:majors,id',
+            'email' => 'required|email|unique:users,email',
+            'phone' => 'required|regex:/^\+?\d{10,15}$/',
+            'doctor_id' => 'required|exists:doctors,id',
+            'major_id' => 'required|exists:majors,id',
 
         ]);
         // $user = new User();

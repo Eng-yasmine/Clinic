@@ -9,6 +9,6 @@ class RegisterController extends Controller
 {
     public function index()
     {
-        return view('user.pages.register');
+        // return view('user.pages.register');
     }
 }
