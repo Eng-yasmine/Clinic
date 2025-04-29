@@ -4,10 +4,10 @@
 مشروع لادارة مواعيد العيادات للمرضي والاطباء باستخدام لارافيل
 
 ## Technologies Used
-laravel 
-laravel Breeze 
-MYSQL
-Bootstrap 
+- `laravel` 
+- `laravel Breeze` 
+- `MYSQL`
+- `Bootstrap`
 
 ## Progress 
 User Authentication (login/register)
