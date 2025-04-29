@@ -9,11 +9,11 @@
  [Laravel Breeze]
 
 *الخطوات اللي عملتها:*
-composer require laravel/breeze --dev
-php artisan breeze:install
-php artisan migrate
-npm install
-npm run dev
+- `composer require laravel/breeze --dev`
+- `php artisan breeze:install`
+- `php artisan migrate`
+- `npm install`
+- `npm run dev`
 *المشاكل اللي واجهتني:*
 
 *ملاحظات/تعليقات:*
