@@ -1,10 +1,11 @@
 
 <?php
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\user\Auth\LoginController;
 use App\Http\Controllers\user\pages\HomeController;
-use App\Http\Controllers\user\Auth\ContactController;
+use App\Http\Controllers\user\pages\ContactController;
 use App\Http\Controllers\user\pages\MajorsController;
 use App\Http\Controllers\user\Auth\RegisterController;
 use App\Http\Controllers\Auth\RegisteredUserController;
@@ -14,6 +15,13 @@ use App\Http\Controllers\admin\pages\AppointmentsController;
 use App\Http\Controllers\admin\pages\MajorsController as PagesMajorsController;
 use App\Http\Controllers\User\Pages\DoctorsController as UserDoctorsController;
 use App\Http\Controllers\Admin\Pages\DoctorsController as AdminDoctorsController;
+
+Route::group(
+[
+	'prefix' => LaravelLocalization::setLocale(),
+	'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
+], function(){
+
 
 Route::get('/',[UserDoctorsController::class,'index'])->name('home');
 
@@ -65,3 +73,4 @@ Route::get('/',[UserDoctorsController::class,'index'])->name('home');
 });
 
 require __DIR__.'/auth.php';
+});

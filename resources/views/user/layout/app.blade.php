@@ -1,6 +1,6 @@
 @include('user.layout.links')
 <title>@yield('title')</title>
-
+@livewireStyles
 </head>
 
 <body>
@@ -19,7 +19,7 @@
     <!--scripts-->
     @include('user.layout.scripts')
     <!--scripts-->
-
+    @livewireScripts
 </body>
 
 </html>
